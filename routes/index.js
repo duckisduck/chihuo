@@ -24,14 +24,15 @@
         
     });
 
-    user.save(function (err, res) {
+    user.save(function (err) {
 
         if (err) {
             console.log("Error:" + err);
         }
         else {
-            console.log("Res:" + res);
-            
+            // console.log("Res:" + res);
+            console.log("succes")
+            res.render('ucenter', { title:'ucenter' });
         }
 
     });
