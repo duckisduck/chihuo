@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset = "UTF-8">
+	<title>my index</title>
+	<link href="bower_components/bootstrap/dist/jcss/bootstrap.min.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="stylesheets/style.css" rel="stylesheet"></script>
+  </head>
+  <body>
+  <!--<div style="width:100%;height:100%;position:absolute;text-align: center"><img src ="images/nsd.jpg" >-->
+	
+	<table width="100%" style="margin-top: 10%;">
+  <tr>
+  <td align="center" valign="middle">
+    <div class="notice" style="color: #177B93; font-size: 10px">
+        Please log on to use the NSD-DATASRC<br />
+        </div><br />
+    <table width="960" height="455" style="border: 0px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0" background="images/circle2.jpg">
+      <tr>
+        <td align="right" valign="bottom" height="175" colspan="2">
+          <form name="login" action="localhost:3000/login" method="post"
+               onSubmit="return doLogin()" >
+            <input type="hidden" name="dst" value="" />
+            <input type="hidden" name="popup" value="true" />
+            
+              <table width="120" style="margin-right:10%; margin-bottom:5%">
+                <tr>
+                                  <td align="right">login</td>
+                  <td><input style="width: 80px" name="username" type="text" value=""/></td> 
+                </tr>
+                <tr>
+                                  <td align="right">password</td>
+                  <td><input style="width: 80px" name="password" type="password"/></td>
+                </tr>
+                <tr>
+                                  <td>&nbsp;</td>
+                  <td><input type="submit" value="OK" /></td>
+                </tr>
+              </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+  
+  <br /><div style="color: #177B93; font-size: 10px">Powered by NSD</div>
+  
+  </td>
+  </tr>
+</table>
+
+  </body>
+</html>

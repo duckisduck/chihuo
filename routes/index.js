@@ -9,6 +9,33 @@
 	    res.render('index', { title: 'index' });
   });
 
+  /* admin */
+  router.get('/admin', function(req, res) {
+      res.render('admin', { title: 'admin' });
+  });
+
+  /* admin */
+  router.get('/map', function(req, res) {
+      res.render('map', { title: 'map' });
+  });
+
+  /* testBootstrap */
+  router.get('/testBootstrap', function(req, res) {
+      res.render('testBootstrap', { title: 'testBootstrap' });
+  });
+
+  /* testtubiao */
+  router.get('/testtubiao', function(req, res) {
+      res.render('testtubiao', { title: 'testtubiao' });
+  });
+
+
+    /* home */
+  router.get('/home', function(req, res) {
+      res.render('home', { title: 'home' });
+  });
+
+
   /* login */
   router.get('/login', function(req, res) {
 	    res.render('login', { title: 'login' });
@@ -16,7 +43,8 @@
 
   /* ucenter */
   router.post('/ucenter', function(req, res) {
-  	function insert() {
+  	function insert(res) {
+      var flag ;
  
    var user = new User({
         name : req.body.name,                 //用户账号
@@ -27,19 +55,48 @@
     user.save(function (err) {
 
         if (err) {
+          flag=0;
             console.log("Error:" + err);
         }
         else {
+          flag = 1;
             // console.log("Res:" + res);
-            console.log("succes")
-            res.render('ucenter', { title:'ucenter' });
+            console.log("succes insert")
+           
+            //console.log("Error:" + res);
         }
 
     });
+
+
 }
 
 insert();
+ if (flag=0) {
+      res.render('ucenter', { title:'insert succes' });
+      console.log("weberror");
+    }
+    else{
+      res.render('ucenter', { title:'insert succes' });
+      console.log("websuccess");
+    }
+ //res.render('ucenter', { title:'insert succes' });
 
+//删除
+/*function del(){
+    var wherestr = {'name' : req.body.name};
+    
+    User.remove(wherestr, function(err){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+            console.log("Res:"+ wherestr);
+        }
+    })
+}
+
+del();*/
 		  // var query = {name: req.body.name, password: req.body.password};
 		  // (function(){
 		  	

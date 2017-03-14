@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+.thick-pink-border {
+border-color: pink;
+border-width: 5px;
+border-style: dotted solid;
+border-radius: 0;
+}
+.smaller-image{
+	width: 200px;
+}
+
+.image-center{
+	text-align: center;
+}
